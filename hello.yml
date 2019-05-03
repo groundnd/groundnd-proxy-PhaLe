@@ -1,0 +1,16 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 200
+      arrivalRate: 50
+  payload:
+    path: "dataAbodeId.csv"
+    fields:
+      - "abodeid"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - get:
+        url: "/api/abodes/{{abodeid}}"
